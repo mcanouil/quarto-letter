@@ -1,6 +1,6 @@
 # Letter Format Template
 
-This is a **WIP** Quarto template that assists you in creating a manuscript using the letter format.
+This is a Quarto template that assists you in creating a manuscript using the letter format.
 
 ## Creating a New Letter
 
@@ -34,9 +34,7 @@ quarto render template.qmd --to letter-pdf
 or in your document yaml
 
 ```yaml
-format:
-  letter-pdf:
-    keep-tex: true    
+format: letter-pdf
 ```
 
 You can view a preview of the rendered template at <https://mcanouil.github.io/quarto-letter/>.

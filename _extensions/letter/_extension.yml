@@ -3,14 +3,16 @@ author: Mickaël Canouil
 version: 0.1.0
 contributes:
   formats:
+    common:
+      date: today
+      date-format: long
     pdf:
-      recipient: "recipient"
       documentclass: letter
       geometry:
-        - "top=1in"
+        - "margin=1in"
         - "bottom=1in"
-        - "left=2in"
-        - "right=2in"
+        - "left=1in"
+        - "right=1in"
       colorlinks: true
       template-partials:
         - "partials/before-body.tex"

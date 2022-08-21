@@ -1,3 +1,14 @@
+$if(closing)$
 \closing{$closing$}
-
+$endif$
+\vfill
+$if(encl)$
+\encl{$for(encl)$$encl$$sep$\\$endfor$}
+$endif$
+$if(cc)$
+\cc{$for(cc)$$cc$$sep$\\$endfor$}
+$endif$
+$if(ps)$
+\ps{$ps$}
+$endif$
 \end{letter}
