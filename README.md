@@ -1,6 +1,6 @@
 # Letter Format Template
 
-This is a Quarto template that assists you in creating a manuscript using the letter format.
+This is a **WIP** Quarto template that assists you in creating a manuscript using the letter format.
 
 ## Creating a New Letter
 
