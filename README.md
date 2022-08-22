@@ -24,7 +24,7 @@ quarto install extension mcanouil/quarto-letter
 
 ## Usage
 
-To use the format, you can use the format names `letter-pdf`.
+To use the format, you can use the format name `letter-pdf`[^1].
 For example:
 
 ```bash
@@ -38,3 +38,5 @@ format: letter-pdf
 ```
 
 You can view a preview of the rendered template at <https://mcanouil.github.io/quarto-letter/>.
+
+[^1]: Currently only PDF is supported but HTML support will be added as soon as Paged.js is made available in [Quarto](https://quarto.org).
