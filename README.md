@@ -37,6 +37,13 @@ or in your document yaml
 format: letter-pdf
 ```
 
+It's possible to change the subject title and the subject suffix, e.g., for a French letter:
+
+```yaml
+subject-title: Objet
+subject-suffix: "&nbsp;:"
+```
+
 You can view a preview of the rendered template at <https://mcanouil.github.io/quarto-letter/>.
 
 [^1]: Currently only PDF is supported but HTML support will be added as soon as Paged.js is made available in [Quarto](https://quarto.org).
