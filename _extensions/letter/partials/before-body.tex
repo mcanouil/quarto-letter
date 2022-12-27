@@ -2,7 +2,7 @@ $if(author)$
 \signature{$author$}
 \address{${ by-author:_authors.tex() }}
 $endif$
-\begin{letter}{$for(address)$$address$$sep$\\$endfor$$if(subject)$\\ ~ \\Subject: $subject$$endif$}
+\begin{letter}{$for(address)$$address$$sep$\\$endfor$$if(subject)$\\ ~ \\$if(subject-title)$$subject-title$$else$Subject$endif$$if(subject-suffix)$$subject-suffix$$else$:$endif$ $subject$$endif$}
 $if(opening)$
 \opening{$opening$}
 $endif$
