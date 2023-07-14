@@ -14,6 +14,7 @@ address:
   - Newport
   - Ipswich IP3 5RT
 subject: collaboration
+subject-title: "Subject"
 opening: "Dear Sir or Madam,"
 closing: "Yours Faithfully,"
 cc:
