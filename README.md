@@ -19,7 +19,7 @@ You may also use this format with an existing Quarto project or document.
 From the quarto project or document directory, run the following command to install this format:
 
 ```bash
-quarto install extension mcanouil/quarto-letter
+quarto add mcanouil/quarto-letter
 ```
 
 ## Usage
