@@ -1,6 +1,8 @@
 ---
 author:
-  - name: John Doe
+  - name: |
+      John Doe
+      `\linebreak\includegraphics[width=0.25\textwidth]{signature.jpg}`{=latex}
     affiliation:
       - name: Dummy org
         department: Cool Dep
