@@ -1,6 +1,6 @@
 title: Letter Format Template
 author: Mickaël Canouil
-version: 1.0.2
+version: 1.0.3
 quarto-required: ">=1.2.280"
 contributes:
   formats:
