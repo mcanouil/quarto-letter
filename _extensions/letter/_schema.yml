@@ -1,0 +1,43 @@
+# _schema.yml for "letter" format extension
+# Describes format-specific options for IDE tooling and runtime validation.
+
+# Per-format schemas.
+# Options configured under format: letter-pdf: in YAML metadata.
+formats:
+  letter-pdf:
+    address:
+      type: array
+      required: true
+      description: "Recipient address lines."
+      items:
+        type: string
+    subject:
+      type: string
+      description: "Letter subject line."
+    subject-title:
+      type: string
+      default: "Subject"
+      description: "Label preceding the subject line."
+    subject-suffix:
+      type: string
+      default: ":"
+      description: "Character appended after the subject title."
+    opening:
+      type: string
+      description: "Opening salutation (e.g. 'Dear Sir or Madam,')."
+    closing:
+      type: string
+      description: "Closing salutation (e.g. 'Yours Faithfully,')."
+    cc:
+      type: array
+      description: "Carbon copy recipients."
+      items:
+        type: string
+    encl:
+      type: array
+      description: "List of enclosures."
+      items:
+        type: string
+    ps:
+      type: string
+      description: "Postscript text appended after the closing."
