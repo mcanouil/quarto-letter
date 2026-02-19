@@ -1,6 +1,6 @@
 {
 	"Letter front matter": {
-		"prefix": "letter-meta",
+		"prefix": "meta",
 		"body": [
 			"---",
 			"title: \"${1:Letter Title}\"",
