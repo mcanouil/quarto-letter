@@ -1,0 +1,21 @@
+{
+	"Letter front matter": {
+		"prefix": "meta",
+		"body": [
+			"---",
+			"title: \"${1:Letter Title}\"",
+			"author: \"${2:Your Name}\"",
+			"date: today",
+			"format: letter-pdf",
+			"address:",
+			"  - \"${3:Recipient Name}\"",
+			"  - \"${4:123 Recipient Road}\"",
+			"  - \"${5:London, EC1A 1BB}\"",
+			"subject: \"${6:Letter Subject}\"",
+			"opening: \"${7:Dear Sir or Madam,}\"",
+			"closing: \"${8:Yours faithfully,}\"",
+			"---"
+		],
+		"description": "Letter format document front matter"
+	}
+}
