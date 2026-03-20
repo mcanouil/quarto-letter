@@ -8,26 +8,26 @@ author:
         city: Magic city
         country: best one
         postal-code: 9999
-address:
-  - Director Doe & Co
-  - 35 Anthony Road
-  - Newport
-  - Ipswich IP3 5RT
-subject: collaboration
-subject-title: "Subject"
-opening: "Dear Sir or Madam,"
-closing: "Yours Faithfully,"
-cc:
-  - Recipient 1
-  - Recipient 2
-encl:
-  - Enclosure 1
-  - Enclosure 2
-ps: |
-  PS: Lorem ipsum dolor sit amet, *consectetur* adipiscing elit.
 format:
   letter-pdf:
     output-file: index
+    address:
+      - Director Doe & Co
+      - 35 Anthony Road
+      - Newport
+      - Ipswich IP3 5RT
+    subject: collaboration
+    subject-title: "Subject"
+    opening: "Dear Sir or Madam,"
+    closing: "Yours Faithfully,"
+    cc:
+      - Recipient 1
+      - Recipient 2
+    encl:
+      - Enclosure 1
+      - Enclosure 2
+    ps: |
+      PS: Lorem ipsum dolor sit amet, *consectetur* adipiscing elit.
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis dolor vitae tristique eleifend. Quisque non ipsum sit amet velit malesuada consectetur. Praesent vel facilisis leo. Sed facilisis varius orci, ut aliquam lorem malesuada in. Morbi nec purus at nisi fringilla varius non ut dui. Pellentesque bibendum sapien velit. Nulla purus justo, congue eget enim a, elementum sollicitudin eros. Cras porta augue ligula, vel adipiscing odio ullamcorper eu. In tincidunt nisi sit amet tincidunt tincidunt. Maecenas elementum neque eget dolor [egestas fringilla](http://example.com):
