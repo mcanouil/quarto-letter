@@ -2,7 +2,16 @@
 
 ## Unreleased
 
-No user-facing changes.
+### New Features
+
+- feat: Add `signature-image` (and `signature-image-width`) for inserting a digital signature image between the closing and the printed name.
+- feat: Add `header-image` (and `header-image-width`) for letterhead images inserted above the opening salutation.
+- feat: Add a French bilingual snippet (`meta-fr`) and a signature-image snippet (`meta-sig`).
+- feat: Add a Lua filter that validates the required `address` field and warns on raw HTML tokens in `subject` or `subject-title`.
+
+### Documentation
+
+- docs: Document the new image options and the French (bilingual) example in the README.
 
 ## 1.1.0 (2026-02-21)
 
