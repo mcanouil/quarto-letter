@@ -7,6 +7,8 @@ contributes:
     common:
       date: today
       date-format: long
+      filters:
+        - letter.lua
     pdf:
       documentclass: letter
       geometry:
