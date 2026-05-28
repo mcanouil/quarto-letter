@@ -3,7 +3,6 @@
 --- @license MIT
 --- @copyright 2026 Mickaël Canouil
 --- @author Mickaël Canouil
---- @version 1.2.0
 --- @brief Validate front matter and prepare letterhead/signature assets.
 --- @description Validates required fields for the letter-pdf format and
 --- prepares optional `header-image` and `signature-image` blocks so the
@@ -92,7 +91,6 @@ end
 
 --- Validate that the recipient address is present and well formed.
 --- @param meta table Pandoc document metadata
---- @return boolean ok true when validation succeeds
 local function validate_address(meta)
   if not list_has_entries(meta['address']) then
     log.log_error(
@@ -100,9 +98,7 @@ local function validate_address(meta)
       "Missing required 'address' field. " ..
       "Add at least one recipient address line under format.letter-pdf.address."
     )
-    return false
   end
-  return true
 end
 
 --- Detect a RawInline carrying an HTML tag inside a Pandoc inline list.
