@@ -1,18 +1,18 @@
-# _schema.yml for "letter" format extension
+# Schema for the letter extension
 # Describes format-specific options for IDE tooling and runtime validation.
 
 # Per-format schemas.
 # Options configured under format: letter-pdf: in YAML metadata.
 
-$schema: https://m.canouil.dev/quarto-wizard/assets/schema/v1/extension-schema.json
+$schema: https://m.canouil.dev/quarto-wizard/assets/schema/v2/extension-schema.json
 
 formats:
   letter-pdf:
     address:
       type: array
       required: true
-      min-items: 1
-      description: "Recipient address lines."
+      minItems: 1
+      description: "Recipient address lines (required)."
       items:
         type: string
     subject:
@@ -45,3 +45,17 @@ formats:
     ps:
       type: string
       description: "Postscript text appended after the closing."
+    header-image:
+      type: string
+      description: "Path to a letterhead image inserted above the opening salutation."
+    header-image-width:
+      type: string
+      default: "\\textwidth"
+      description: "LaTeX width for the letterhead image (e.g. '0.5\\textwidth', '8cm')."
+    signature-image:
+      type: string
+      description: "Path to a signature image inserted between the closing and the printed name."
+    signature-image-width:
+      type: string
+      default: "4cm"
+      description: "LaTeX width for the signature image (e.g. '4cm', '0.3\\textwidth')."

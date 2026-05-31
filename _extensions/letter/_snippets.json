@@ -1,5 +1,5 @@
 {
-	"Letter front matter": {
+	"Letter front matter (English)": {
 		"prefix": "meta",
 		"body": [
 			"---",
@@ -16,6 +16,50 @@
 			"closing: \"${8:Yours faithfully,}\"",
 			"---"
 		],
-		"description": "Letter format document front matter"
+		"description": "Letter format document front matter (English)."
+	},
+	"Letter front matter (French)": {
+		"prefix": "meta-fr",
+		"body": [
+			"---",
+			"title: \"${1:Titre de la lettre}\"",
+			"author: \"${2:Votre nom}\"",
+			"date: today",
+			"format:",
+			"  letter-pdf:",
+			"    subject-title: \"Objet\"",
+			"    subject-suffix: \"&nbsp;:\"",
+			"address:",
+			"  - \"${3:Nom du destinataire}\"",
+			"  - \"${4:35 rue de l'Exemple}\"",
+			"  - \"${5:75000 Paris}\"",
+			"subject: \"${6:Objet de la lettre}\"",
+			"opening: \"${7:Madame, Monsieur,}\"",
+			"closing: \"${8:Je vous prie d'agréer, Madame, Monsieur, mes salutations distinguées.}\"",
+			"---"
+		],
+		"description": "Letter format document front matter (French)."
+	},
+	"Letter with signature image": {
+		"prefix": "meta-sig",
+		"body": [
+			"---",
+			"title: \"${1:Letter Title}\"",
+			"author: \"${2:Your Name}\"",
+			"date: today",
+			"format:",
+			"  letter-pdf:",
+			"    signature-image: ${3:signature.png}",
+			"    signature-image-width: ${4:4cm}",
+			"address:",
+			"  - \"${5:Recipient Name}\"",
+			"  - \"${6:123 Recipient Road}\"",
+			"  - \"${7:London, EC1A 1BB}\"",
+			"subject: \"${8:Letter Subject}\"",
+			"opening: \"${9:Dear Sir or Madam,}\"",
+			"closing: \"${10:Yours faithfully,}\"",
+			"---"
+		],
+		"description": "Letter format front matter with a signature image."
 	}
 }
