@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.2.0 (2026-05-31)
+
 ### New Features
 
 - feat: Add `signature-image` (and `signature-image-width`) for inserting a digital signature image between the closing and the printed name.
