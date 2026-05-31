@@ -2,3 +2,5 @@
 template_files/
 template.pdf
 template.tex
+
+/.luarc.json
