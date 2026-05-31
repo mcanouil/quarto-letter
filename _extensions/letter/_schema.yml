@@ -1,17 +1,17 @@
-# _schema.yml for "letter" format extension
+# Schema for the letter extension
 # Describes format-specific options for IDE tooling and runtime validation.
 
 # Per-format schemas.
 # Options configured under format: letter-pdf: in YAML metadata.
 
-$schema: https://m.canouil.dev/quarto-wizard/assets/schema/v1/extension-schema.json
+$schema: https://m.canouil.dev/quarto-wizard/assets/schema/v2/extension-schema.json
 
 formats:
   letter-pdf:
     address:
       type: array
       required: true
-      min-items: 1
+      minItems: 1
       description: "Recipient address lines (required)."
       items:
         type: string
