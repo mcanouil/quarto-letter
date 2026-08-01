@@ -5,7 +5,7 @@ This is a Quarto template that assists you in creating a letter.
 ## Creating a New Letter
 
 ```bash
-quarto use template mcanouil/quarto-letter@1.2.0
+quarto use template mcanouil/quarto-letter@1.2.1
 ```
 
 This will install the extension and create an example qmd file you can use as a starting place.
@@ -13,7 +13,7 @@ This will install the extension and create an example qmd file you can use as a 
 ## Installation For Existing Document
 
 ```bash
-quarto add mcanouil/quarto-letter@1.2.0
+quarto add mcanouil/quarto-letter@1.2.1
 ```
 
 This will install the extension under the `_extensions` subdirectory.
