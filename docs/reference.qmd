@@ -40,6 +40,20 @@ Widths are passed to `\includegraphics`, so any LaTeX dimension works: `4cm`, `1
 In a double-quoted YAML string the backslash has to be doubled, as `"0.5\\textwidth"`, or the literal is lost.
 :::
 
+## What the format sets for you
+
+| Option | Value |
+| --- | --- |
+| `documentclass` | `letter`. |
+| `geometry` | One inch on all four sides. |
+| `colorlinks` | `true`. |
+| `date` | `today`, in the `long` date format. |
+
+: Defaults, each of which you can override in the front matter. {.striped .hover tbl-colwidths="[26,74]"}
+
+The sender's name and address are not options of this format.
+They come from Quarto's own `author` block, whose first affiliation supplies the address printed above the date.
+
 ## Diagnostics
 
 | Condition | Reported as |
@@ -49,6 +63,9 @@ In a double-quoted YAML string the backslash has to be doubled, as `"0.5\\textwi
 | `subject` or `subject-title` containing raw HTML such as `<x>` | A warning, since Pandoc strips it from LaTeX output. |
 
 : What the format reports while rendering. {.striped .hover tbl-colwidths="[46,54]"}
+
+Quarto carries on after a filter reports an error, so a letter with no `address` still produces a PDF, and that PDF is malformed.
+Read the `(E) [letter]` line in the log rather than the presence of an output file.
 
 ## Snippets
 

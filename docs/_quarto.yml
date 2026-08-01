@@ -23,6 +23,9 @@ website:
   # with a leading-slash image path, without normalising.
   site-url: &site-url https://m.canouil.dev/quarto-letter
   repo-url: https://github.com/mcanouil/quarto-letter
+  # The Quarto project root is docs/, so the edit and issue links need the
+  # subdirectory; without it they point at the repository root and 404.
+  repo-subdir: docs
   page-navigation: true
   # atelier defaults search to an overlay button in the navbar. With no navbar
   # the search belongs in the sidebar, as a field rather than a button.

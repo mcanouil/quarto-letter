@@ -12,6 +12,10 @@ A letter is a small, fussy document: the recipient's address in the right place,
 
 `letter` is a Quarto format that takes those as front matter and lays them out, so the body of the letter is the only thing left to write.
 
+[See one rendered by this site](preview.pdf).
+
+![](preview.pdf){.embed-art loading="lazy" title="A letter rendered by the format"}
+
 ## Starting a letter
 
 ```bash
@@ -74,11 +78,10 @@ PDF, through LaTeX.
 
 HTML will follow once Paged.js is available in [Quarto](https://quarto.org).
 
-A rendered letter is attached to each [release](https://github.com/mcanouil/quarto-letter/releases), since this site is HTML and cannot show one.
-
 ## Links
 
 - [Reference](reference.qmd) for every option.
 - [Examples](examples.qmd) for worked letters.
+- [A rendered letter](preview.pdf), built by this site.
 - [Changelog](changelog.qmd) for what each release changed.
 - [Source and issues](https://github.com/mcanouil/quarto-letter) on GitHub.

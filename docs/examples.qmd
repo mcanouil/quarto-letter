@@ -4,13 +4,12 @@ subtitle: "Worked letters."
 description: "Front matter for an English letter, a French one, and one with a letterhead and a signature."
 ---
 
-This site is HTML, and the format produces PDF, so these are the front matter blocks rather than rendered pages.
-A rendered letter is attached to each [release](https://github.com/mcanouil/quarto-letter/releases).
+The [rendered letter](preview.pdf) on this site is built by the format as the site is published.
+This page is the front matter behind it, and three variations.
 
-## A plain letter
+## The letter on this site
 
 ```yaml
----
 author:
   - name: John Doe
     affiliation:
@@ -30,13 +29,19 @@ format:
     subject: collaboration
     opening: "Dear Sir or Madam,"
     closing: "Yours Faithfully,"
----
-
-The body of the letter.
+    cc:
+      - Recipient 1
+      - Recipient 2
+    encl:
+      - Enclosure 1
+      - Enclosure 2
+    ps: |
+      PS: Lorem ipsum dolor sit amet, *consectetur* adipiscing elit.
 ```
 
 `address` is the only required option.
-The author block is Quarto's own, and supplies the sender.
+The author block is Quarto's own, and supplies the sender's name and address at the head of the letter.
+The date under it is `today` in the document language, which the format sets by default.
 
 ## Carbon copies, enclosures, and a postscript
 
@@ -53,7 +58,7 @@ format:
       PS: Lorem ipsum dolor sit amet, *consectetur* adipiscing elit.
 ```
 
-Each is omitted from the letter when it is not given.
+Each is omitted from the letter when it is not given, and all three are set below the closing, in the order enclosures, carbon copies, postscript.
 
 ## A French letter
 
