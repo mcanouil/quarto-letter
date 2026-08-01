@@ -4,3 +4,5 @@ template.pdf
 template.tex
 
 /.luarc.json
+/.quarto/
+**/*.quarto_ipynb
