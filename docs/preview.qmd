@@ -1,0 +1,37 @@
+---
+author:
+  - name: John Doe
+    affiliation:
+      - name: Dummy org
+        department: Cool Dep
+        address: Somewhere
+        city: Magic city
+        country: best one
+        postal-code: 9999
+format:
+  letter-pdf:
+    address:
+      - Director Doe & Co
+      - 35 Anthony Road
+      - Newport
+      - Ipswich IP3 5RT
+    subject: collaboration
+    opening: "Dear Sir or Madam,"
+    closing: "Yours Faithfully,"
+    cc:
+      - Recipient 1
+      - Recipient 2
+    encl:
+      - Enclosure 1
+      - Enclosure 2
+    ps: |
+      PS: Lorem ipsum dolor sit amet, *consectetur* adipiscing elit.
+---
+
+Thank you for your letter of last month.
+This one is rendered by the format as the documentation site is published, so it shows the layout rather than describing it.
+
+The address block above the salutation comes from `address`, and the subject line under it from `subject`, `subject-title`, and `subject-suffix`.
+The sender's name and address come from Quarto's own `author` block.
+
+Below the closing, the carbon copies, the enclosures, and the postscript are each set from their own option, and each is left out when it is not given.

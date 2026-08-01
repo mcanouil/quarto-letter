@@ -1,0 +1,87 @@
+---
+title: "Letter"
+subtitle: "A letter format for Quarto."
+description: "What the letter format gives you, how to start from it, and the front matter that fills a letter in."
+authors:
+  - name: "Mickaël CANOUIL, _Ph.D._"
+    orcid: "0000-0002-3396-4549"
+    url: "https://mickael.canouil.fr"
+---
+
+A letter is a small, fussy document: the recipient's address in the right place, a subject line with the right label, an opening and a closing, and often a letterhead and a signature.
+
+`letter` is a Quarto format that takes those as front matter and lays them out, so the body of the letter is the only thing left to write.
+
+[See one rendered by this site](preview.pdf).
+
+![](preview.pdf){.embed-art loading="lazy" title="A letter rendered by the format"}
+
+## Starting a letter
+
+```bash
+quarto use template {{< var extension.reference >}}
+```
+
+This installs the format and writes a starting document.
+
+::: {.btn-group role="group" aria-label="Quarto Wizard installer options"}
+
+[Visual Studio Code](vscode://mcanouil.quarto-wizard/use?repo={{< var extension.wizard-reference >}}){.btn .btn-outline-primary title="Use {{< var extension.reference >}} in Visual Studio Code using the Quarto Wizard extension."}
+[Positron](positron://mcanouil.quarto-wizard/use?repo={{< var extension.wizard-reference >}}){.btn .btn-outline-primary title="Use {{< var extension.reference >}} in Positron using the Quarto Wizard extension."}
+[VSCodium](vscodium://mcanouil.quarto-wizard/use?repo={{< var extension.wizard-reference >}}){.btn .btn-outline-primary title="Use {{< var extension.reference >}} in VSCodium using the Quarto Wizard extension."}
+
+:::
+
+## Adding it to a document you already have
+
+```bash
+quarto add {{< var extension.reference >}}
+```
+
+This will install the extension under the `_extensions` subdirectory.
+If you are using version control, you will want to check in this directory.
+
+::: {.btn-group role="group" aria-label="Quarto Wizard installer options"}
+
+[Visual Studio Code](vscode://mcanouil.quarto-wizard/install?repo={{< var extension.wizard-reference >}}){.btn .btn-outline-primary title="Install {{< var extension.reference >}} in Visual Studio Code using the Quarto Wizard extension."}
+[Positron](positron://mcanouil.quarto-wizard/install?repo={{< var extension.wizard-reference >}}){.btn .btn-outline-primary title="Install {{< var extension.reference >}} in Positron using the Quarto Wizard extension."}
+[VSCodium](vscodium://mcanouil.quarto-wizard/install?repo={{< var extension.wizard-reference >}}){.btn .btn-outline-primary title="Install {{< var extension.reference >}} in VSCodium using the Quarto Wizard extension."}
+
+:::
+
+## Quick start
+
+```yaml
+format:
+  letter-pdf:
+    address:
+      - Director Doe & Co
+      - 35 Anthony Road
+      - Newport
+      - Ipswich IP3 5RT
+    subject: collaboration
+    opening: "Dear Sir or Madam,"
+    closing: "Yours Faithfully,"
+```
+
+```bash
+quarto render letter.qmd --to letter-pdf
+```
+
+Only `address` is required; everything else is left out when it is not given.
+
+See the [Reference](reference.qmd) for every option, and the [Examples](examples.qmd) for a bilingual letter and one with a letterhead.
+
+## Where it works
+
+PDF, through LaTeX.
+
+HTML will follow once Paged.js is available in [Quarto](https://quarto.org).
+
+## Links
+
+- [Reference](reference.qmd) for every option.
+- [Examples](examples.qmd) for worked letters.
+- [A rendered letter](preview.pdf), built by this site.
+- [Changelog](changelog.qmd) for what each release changed.
+- [Source and issues](https://github.com/mcanouil/quarto-letter) on GitHub.

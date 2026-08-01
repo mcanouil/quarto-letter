@@ -1,0 +1,78 @@
+---
+title: "Reference"
+subtitle: "Every option the letter format accepts."
+description: "The complete letter configuration: the address and subject, the salutations, enclosures, letterhead and signature images, and the diagnostics."
+---
+
+## Using the format
+
+```yaml
+format: letter-pdf
+```
+
+```bash
+quarto render letter.qmd --to letter-pdf
+```
+
+## Options
+
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `address` | array | required | The recipient's address, one line per entry. |
+| `subject` | string | | The subject line. |
+| `subject-title` | string | `Subject` | The label before the subject. |
+| `subject-suffix` | string | `:` | What follows that label. |
+| `opening` | string | | The opening salutation. |
+| `closing` | string | | The closing salutation. |
+| `cc` | array | | Carbon copy recipients. |
+| `encl` | array | | Enclosures. |
+| `ps` | string | | A postscript, after the closing. |
+| `header-image` | path | | A letterhead, placed above the opening. |
+| `header-image-width` | string | `\textwidth` | Its width, as a LaTeX dimension. |
+| `signature-image` | path | | A signature, between the closing and the printed name. |
+| `signature-image-width` | string | `4cm` | Its width, as a LaTeX dimension. |
+
+: Options under `letter-pdf`. {.striped .hover tbl-colwidths="[24,10,16,50]"}
+
+::: {.callout-note}
+Widths are passed to `\includegraphics`, so any LaTeX dimension works: `4cm`, `120pt`, `0.5\textwidth`.
+
+In a double-quoted YAML string the backslash has to be doubled, as `"0.5\\textwidth"`, or the literal is lost.
+:::
+
+## What the format sets for you
+
+| Option | Value |
+| --- | --- |
+| `documentclass` | `letter`. |
+| `geometry` | One inch on all four sides. |
+| `colorlinks` | `true`. |
+| `date` | `today`, in the `long` date format. |
+
+: Defaults, each of which you can override in the front matter. {.striped .hover tbl-colwidths="[26,74]"}
+
+The sender's name and address are not options of this format.
+They come from Quarto's own `author` block, whose first affiliation supplies the address printed above the date.
+
+## Diagnostics
+
+| Condition | Reported as |
+| --- | --- |
+| `address` missing or empty | An error. |
+| `subject-title` set with no `subject` | A warning. |
+| `subject` or `subject-title` containing raw HTML such as `<x>` | A warning, since Pandoc strips it from LaTeX output. |
+
+: What the format reports while rendering. {.striped .hover tbl-colwidths="[46,54]"}
+
+Quarto carries on after a filter reports an error, so a letter with no `address` still produces a PDF, and that PDF is malformed.
+Read the `(E) [letter]` line in the log rather than the presence of an output file.
+
+## Snippets
+
+The extension ships editor snippets for the front matter: `meta` for an English letter, `meta-fr` for a French one, and `meta-sig` for one with a signature image.
+They work in any editor with Quarto's IDE integration.
+
+## Limitations
+
+- PDF only, through LaTeX. HTML waits on Paged.js support in Quarto.
+- Image widths are LaTeX dimensions, so they are not portable to a future HTML output as written.
