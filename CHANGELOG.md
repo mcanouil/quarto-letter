@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.2.1 (2026-08-01)
+
 ### Documentation
 
 - docs: Add a documentation website under `docs/`, built on the `atelier` project type and published to <https://m.canouil.dev/quarto-letter/>, rendering a letter with the format itself.
