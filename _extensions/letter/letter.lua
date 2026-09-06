@@ -9,7 +9,7 @@
 --- LaTeX template can render them without bespoke escaping in the partials.
 
 local EXTENSION_NAME = 'letter'
-local log = require(quarto.utils.resolve_path('_modules/logging.lua'):gsub('%.lua$', ''))
+local log = require(quarto.utils.resolve_path('_vendor/quarto-lua-modules/logging.lua'):gsub('%.lua$', ''))
 
 --- Convert a metadata value to a trimmed string.
 --- @param value any Pandoc metadata value or nil
