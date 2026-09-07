@@ -20,9 +20,15 @@ website:
   title: "Letter"
   description: "A Quarto format for letters: recipient address, subject, salutations, enclosures, letterhead, and a signature image, rendered to PDF."
   # No trailing slash: Quarto builds the social image URL by concatenating this
-  # with a leading-slash image path, without normalising.
+  # with the image path, without normalising.
   site-url: &site-url https://m.canouil.dev/quarto-letter
   repo-url: https://github.com/mcanouil/quarto-letter
+  open-graph:
+    image: assets/social/og-image.png
+    image-alt: "The quarto-letter social card: the extension name and the \"format\" badge over the line \"Write elegant letters with a professional template\", beside a dark code window showing letter.qmd."
+  twitter-card:
+    image: assets/social/og-image.png
+    image-alt: "The quarto-letter social card: the extension name and the \"format\" badge over the line \"Write elegant letters with a professional template\", beside a dark code window showing letter.qmd."
   # The Quarto project root is docs/, so the edit and issue links need the
   # subdirectory; without it they point at the repository root and 404.
   repo-subdir: docs
