@@ -3,9 +3,9 @@ sources:
   quarto-lua-modules:
     origin: "https://github.com/mcanouil/quarto-lua-modules"
     fetch: "{origin}/releases/download/{version}/{file}"
-    version: "2.1.0"
+    version: "2.3.0"
     licence: MIT
     files:
       logging.lua:
-        sha256: "0c3ded6020d3739c91bb6a492328751b284d1ada5763a1b8ca6fc5536ac01c95"
+        sha256: "5d99ceb89c813fbe4491310e42b4a4cff62e11dda42f01b4f61f969aa58e0706"
         runtime: any
