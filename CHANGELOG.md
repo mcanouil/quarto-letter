@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### New Features
+
+- feat: Check the format options against the schema during a render, so a missing `address` or a value of the wrong type is reported by name. The extension's own address check is removed, because the schema said the same thing in different words. (#47)
+
 ### Documentation
 
 - docs: Serve the extension's social card as the Open Graph image, so a shared link shows the card rather than the first image on the page. (#45)
