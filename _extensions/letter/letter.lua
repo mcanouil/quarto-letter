@@ -10,6 +10,25 @@
 
 local EXTENSION_NAME = 'letter'
 local log = require(quarto.utils.resolve_path('_vendor/quarto-lua-modules/logging.lua'):gsub('%.lua$', ''))
+local schema = require(quarto.utils.resolve_path('_vendor/quarto-wizard/schema.lua'):gsub('%.lua$', ''))
+local check = require(quarto.utils.resolve_path('_vendor/quarto-lua-modules/schema-check.lua'):gsub('%.lua$', ''))
+
+--- The format this extension contributes, and the name its schema declares.
+local FORMAT_NAME = 'letter-pdf'
+
+--- The schema check, built once and reused for the whole document.
+---
+--- The validator is injected rather than required by the check module, so the
+--- two vendored sources stay independent of where the other was placed.
+---
+--- The extension contributes a format and declares a `formats` section, so the
+--- check runs from the `Meta` pass. Quarto merges the options of the selected
+--- format into the top level of the metadata, which is where `format` reads
+--- them from, so `options` has to run first to supply that metadata.
+---
+--- A schema that cannot be read is reported by the module as an error and the
+--- render carries on: a configuration file must not stop a document.
+local checker = check.new(schema, EXTENSION_NAME)
 
 --- Convert a metadata value to a trimmed string.
 --- @param value any Pandoc metadata value or nil
@@ -20,24 +39,6 @@ local function meta_to_string(value)
   end
   local text = pandoc.utils.stringify(value)
   return text:gsub('^%s+', ''):gsub('%s+$', '')
-end
-
---- Check that a metadata list has at least one non-empty entry.
---- @param value any Pandoc metadata value (expected to be a List)
---- @return boolean has_entries true when the list contains usable lines
-local function list_has_entries(value)
-  if value == nil then
-    return false
-  end
-  if type(value) ~= 'table' then
-    return meta_to_string(value) ~= ''
-  end
-  for _, item in ipairs(value) do
-    if meta_to_string(item) ~= '' then
-      return true
-    end
-  end
-  return false
 end
 
 --- Reconstruct a LaTeX width string from Pandoc inline metadata.
@@ -87,18 +88,6 @@ end
 --- @return string snippet LaTeX `\includegraphics` call
 local function include_graphics_snippet(path, width)
   return string.format('\\includegraphics[width=%s]{%s}', width, path)
-end
-
---- Validate that the recipient address is present and well formed.
---- @param meta table Pandoc document metadata
-local function validate_address(meta)
-  if not list_has_entries(meta['address']) then
-    log.log_error(
-      EXTENSION_NAME,
-      "Missing required 'address' field. " ..
-      "Add at least one recipient address line under format.letter-pdf.address."
-    )
-  end
 end
 
 --- Detect a RawInline carrying an HTML tag inside a Pandoc inline list.
@@ -219,7 +208,12 @@ local function process_meta(meta)
     return meta
   end
 
-  validate_address(meta)
+  -- The schema declares `address` required with at least one entry, and the
+  -- format check reports it by name. A second check here said the same thing in
+  -- different words, so the schema is left as the only one that says it.
+  checker:options(meta)
+  checker:format(FORMAT_NAME)
+
   warn_on_inconsistencies(meta)
   return prepare_image_hooks(meta)
 end
