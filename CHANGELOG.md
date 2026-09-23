@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.2.2 (2026-09-23)
+
 ### New Features
 
 - feat: Check the format options against the schema during a render, so a missing `address` or a value of the wrong type is reported by name. The extension's own address check is removed, because the schema said the same thing in different words. (#47)
